@@ -37,6 +37,15 @@ int main()
 
   assert(game_state.current_state() == "O wins");
 
+  board.clear();
+  assert(game_state.current_state() == "in-progress");
+
+  board.move(1, 'W');
+  board.move(4, 'W');
+  board.move(7, 'W');
+
+  assert(game_state.current_state() == "W wins");
+
   cout << "All of the tests have passed!" << endl;
   return 0;
 }
