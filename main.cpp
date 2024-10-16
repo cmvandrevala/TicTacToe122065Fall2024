@@ -3,23 +3,36 @@
 #include "board.hpp"
 #include "console.hpp"
 #include "game_state.hpp"
+#include "validator.hpp"
 
 int main()
 {
   Board board;
   GameState game_state(&board);
   Console console(&board);
+  Validator validator;
   char mark = 'X';
   int move;
 
+  // Game loop!
   while (game_state.current_state() == "in-progress")
   {
     std::cout << console.display();
-    std::cout << "What is your move? ";
-    std::cin >> move;
-    board.move(move, mark);
-    // get some input from the user (with validation)
-    // make a move on the board
-    // switch the marker from x to o or vice versa
+
+    // Validator is getting a move from a user. SHould it have a different name?
+    int valid_move = validator.get_move();
+
+    // Should board.move(...) be called inside validator.get_move()?
+    board.move(valid_move, mark);
+
+    // Switch up the marks each turn. This will live in Game eventually
+    if (mark == 'X')
+    {
+      mark = 'O';
+    }
+    else
+    {
+      mark = 'X';
+    }
   }
 }
