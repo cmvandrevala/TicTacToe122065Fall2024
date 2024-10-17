@@ -4,6 +4,7 @@
 #include "console.hpp"
 #include "game_state.hpp"
 #include "human_player.hpp"
+#include "game.hpp"
 
 int main()
 {
@@ -12,11 +13,8 @@ int main()
   Console console(&board);
   HumanPlayer player_one(&board, 'X');
   HumanPlayer player_two(&board, 'O');
+  HumanPlayer current_player = player_one;
+  Game game(&console, &game_state, &player_one, &player_two);
 
-  while (game_state.current_state() == "in-progress")
-  {
-    std::cout << console.display();
-    player_one.get_move();
-    player_two.get_move();
-  }
+  game.start();
 }
