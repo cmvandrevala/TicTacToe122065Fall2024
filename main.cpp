@@ -13,7 +13,6 @@ int main()
   Console console(&board);
   HumanPlayer player_one(&board, 'X');
   HumanPlayer player_two(&board, 'O');
-  HumanPlayer current_player = player_one;
   Game game(&console, &game_state, &player_one, &player_two);
 
   game.start();

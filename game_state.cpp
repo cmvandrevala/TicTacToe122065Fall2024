@@ -12,13 +12,29 @@ GameState::GameState(Board *board)
   this->winning_combos[1][1] = 5;
   this->winning_combos[1][2] = 6;
 
-  this->winning_combos[2][0] = 1;
-  this->winning_combos[2][1] = 4;
-  this->winning_combos[2][2] = 7;
+  this->winning_combos[2][0] = 7;
+  this->winning_combos[2][1] = 8;
+  this->winning_combos[2][2] = 9;
 
-  this->winning_combos[3][0] = 7;
-  this->winning_combos[3][1] = 8;
-  this->winning_combos[3][2] = 9;
+  this->winning_combos[3][0] = 1;
+  this->winning_combos[3][1] = 4;
+  this->winning_combos[3][2] = 7;
+
+  this->winning_combos[4][0] = 2;
+  this->winning_combos[4][1] = 5;
+  this->winning_combos[4][2] = 8;
+
+  this->winning_combos[5][0] = 3;
+  this->winning_combos[5][1] = 6;
+  this->winning_combos[5][2] = 9;
+
+  this->winning_combos[6][0] = 1;
+  this->winning_combos[6][1] = 5;
+  this->winning_combos[6][2] = 9;
+
+  this->winning_combos[7][0] = 3;
+  this->winning_combos[7][1] = 5;
+  this->winning_combos[7][2] = 7;
 }
 
 bool GameState::three_in_a_row(int cell_one, int cell_two, int cell_three)
@@ -36,7 +52,7 @@ std::string GameState::select_winner(int cell)
 
 std::string GameState::current_state()
 {
-  for (int i = 0; i < 4; i++)
+  for (int i = 0; i < 8; i++)
   {
     if (this->three_in_a_row(winning_combos[i][0], winning_combos[i][1], winning_combos[i][2]))
     {
