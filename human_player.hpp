@@ -3,8 +3,9 @@
 #include <string>
 
 #include "board.hpp"
+#include "player.hpp"
 
-class HumanPlayer
+class HumanPlayer : public Player
 {
 private:
   Board *board;
