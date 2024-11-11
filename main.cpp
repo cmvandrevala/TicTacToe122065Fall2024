@@ -11,10 +11,11 @@
 int main()
 {
   Board board;
+  WinningCombos combos;
   GameState game_state(&board);
   Console console(&board);
-  Swarm player_one(&board, 'X');
-  Pyromancer player_two(&board, 'O');
+  Swarm player_one(&board, 'X', combos);
+  Pyromancer player_two(&board, 'O', combos);
   Game game(&console, &game_state, &player_one, &player_two);
 
   game.start();

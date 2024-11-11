@@ -2,15 +2,21 @@
 
 #include "swarm.hpp"
 
-Swarm::Swarm(Board *board, char mark)
+Swarm::Swarm(Board *board, char mark, WinningCombos combos)
 {
   this->board = board;
   this->mark = mark;
+  this->combos = combos;
 }
 
 char Swarm::get_mark()
 {
   return this->mark;
+}
+
+WinningCombos Swarm::get_winning_combos()
+{
+  return this->combos;
 }
 
 void Swarm::get_move()

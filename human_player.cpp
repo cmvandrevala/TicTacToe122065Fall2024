@@ -2,15 +2,21 @@
 
 #include "human_player.hpp"
 
-HumanPlayer::HumanPlayer(Board *board, char mark)
+HumanPlayer::HumanPlayer(Board *board, char mark, WinningCombos combos)
 {
   this->board = board;
   this->mark = mark;
+  this->combos = combos;
 }
 
 char HumanPlayer::get_mark()
 {
   return this->mark;
+}
+
+WinningCombos HumanPlayer::get_winning_combos()
+{
+  return this->combos;
 }
 
 void HumanPlayer::get_move()
