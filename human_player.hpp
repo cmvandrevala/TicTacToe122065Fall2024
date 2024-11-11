@@ -9,9 +9,10 @@ class HumanPlayer : public Player
 {
 private:
   Board *board;
+  char mark;
 
 public:
-  char mark;
   HumanPlayer(Board *board, char mark);
   void get_move();
+  char get_mark();
 };

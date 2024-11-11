@@ -2,7 +2,7 @@
 
 #include "game.hpp"
 
-Game::Game(Console *console, GameState *game_state, HumanPlayer *player_one, HumanPlayer *player_two)
+Game::Game(Console *console, GameState *game_state, Player *player_one, Player *player_two)
 {
   this->console = console;
   this->game_state = game_state;
@@ -17,7 +17,7 @@ void Game::start()
   {
     std::cout << console->display();
     current_player->get_move();
-    if (current_player->mark == 'X')
+    if (current_player->get_mark() == 'X')
     {
       current_player = player_two;
     }

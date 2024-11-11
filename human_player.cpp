@@ -8,6 +8,11 @@ HumanPlayer::HumanPlayer(Board *board, char mark)
   this->mark = mark;
 }
 
+char HumanPlayer::get_mark()
+{
+  return this->mark;
+}
+
 void HumanPlayer::get_move()
 {
   // We need to validate this move!

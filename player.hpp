@@ -1,5 +1,8 @@
+#pragma once
+
 class Player
 {
 public:
-  void get_move();
+  virtual void get_move() = 0;
+  virtual char get_mark() = 0;
 };
