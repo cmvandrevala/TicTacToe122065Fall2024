@@ -4,6 +4,7 @@
 #include "console.hpp"
 #include "game_state.hpp"
 #include "human_player.hpp"
+#include "pyromancer.hpp"
 #include "game.hpp"
 
 int main()
@@ -12,7 +13,7 @@ int main()
   GameState game_state(&board);
   Console console(&board);
   HumanPlayer player_one(&board, 'X');
-  HumanPlayer player_two(&board, 'O');
+  Pyromancer player_two(&board, 'O');
   Game game(&console, &game_state, &player_one, &player_two);
 
   game.start();
