@@ -22,13 +22,17 @@ public:
     combo_two.push_back(6);
     this->winning_combos.push_back(combo_two);
 
-    // this->winning_combos[2][0] = 7;
-    // this->winning_combos[2][1] = 8;
-    // this->winning_combos[2][2] = 9;
+    std::vector<int> combo_three;
+    combo_three.push_back(7);
+    combo_three.push_back(8);
+    combo_three.push_back(9);
+    this->winning_combos.push_back(combo_three);
 
-    // this->winning_combos[3][0] = 1;
-    // this->winning_combos[3][1] = 4;
-    // this->winning_combos[3][2] = 7;
+    std::vector<int> combo_four;
+    combo_four.push_back(1);
+    combo_four.push_back(4);
+    combo_four.push_back(7);
+    this->winning_combos.push_back(combo_four);
 
     // this->winning_combos[4][0] = 2;
     // this->winning_combos[4][1] = 5;
@@ -45,5 +49,10 @@ public:
     // this->winning_combos[7][0] = 3;
     // this->winning_combos[7][1] = 5;
     // this->winning_combos[7][2] = 7;
+  }
+
+  std::vector<std::vector<int>> all()
+  {
+    return this->winning_combos;
   }
 };

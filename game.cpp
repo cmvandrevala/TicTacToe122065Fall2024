@@ -13,7 +13,7 @@ Game::Game(Console *console, GameState *game_state, Player *player_one, Player *
 
 void Game::start()
 {
-  while (game_state->current_state() == "in-progress")
+  while (game_state->current_state(current_player) == "in-progress")
   {
     std::cout << console->display();
     current_player->get_move();
