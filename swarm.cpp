@@ -1,12 +1,15 @@
 #include <iostream>
+#include <vector>
 
 #include "swarm.hpp"
 
-Swarm::Swarm(Board *board, char mark, WinningCombos combos)
+Swarm::Swarm(Board *board, char mark)
 {
   this->board = board;
   this->mark = mark;
-  this->combos = combos;
+
+  std::vector<int> additional_win = {1, 3, 7, 9};
+  this->combos = WinningCombos(additional_win);
 }
 
 char Swarm::get_mark()

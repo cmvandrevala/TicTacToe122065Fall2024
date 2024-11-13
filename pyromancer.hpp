@@ -14,7 +14,7 @@ private:
   char mark;
 
 public:
-  Pyromancer(Board *board, char mark, WinningCombos combos);
+  Pyromancer(Board *board, char mark);
   void get_move() override;
   char get_mark() override;
   WinningCombos get_winning_combos() override;

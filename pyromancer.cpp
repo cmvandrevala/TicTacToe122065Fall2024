@@ -2,11 +2,11 @@
 
 #include "pyromancer.hpp"
 
-Pyromancer::Pyromancer(Board *board, char mark, WinningCombos combos)
+Pyromancer::Pyromancer(Board *board, char mark)
 {
   this->board = board;
   this->mark = mark;
-  this->combos = combos;
+  this->combos = WinningCombos();
 }
 
 char Pyromancer::get_mark()

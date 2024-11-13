@@ -7,7 +7,14 @@ GameState::GameState(Board *board)
 
 bool GameState::winning_combo(std::vector<int> combo)
 {
-  return board->get_mark(combo.at(0)) == board->get_mark(combo.at(1)) && board->get_mark(combo.at(1)) == board->get_mark(combo.at(2));
+  if (combo.size() == 3)
+  {
+    return board->get_mark(combo.at(0)) == board->get_mark(combo.at(1)) && board->get_mark(combo.at(1)) == board->get_mark(combo.at(2));
+  }
+  else
+  {
+    // figure out how to check if there are three copies of the same mark in the list of four indices
+  }
 }
 
 std::string GameState::select_winner(int cell)
