@@ -5,7 +5,7 @@ GameState::GameState(Board *board)
   this->board = board;
 }
 
-bool GameState::three_in_a_row(std::vector<int> combo)
+bool GameState::winning_combo(std::vector<int> combo)
 {
   return board->get_mark(combo.at(0)) == board->get_mark(combo.at(1)) && board->get_mark(combo.at(1)) == board->get_mark(combo.at(2));
 }
@@ -25,7 +25,7 @@ std::string GameState::current_state(Player *current_player)
 
   for (combo_iterator = combos.begin(); combo_iterator != combos.end(); combo_iterator++)
   {
-    if (this->three_in_a_row(*combo_iterator))
+    if (this->winning_combo(*combo_iterator))
     {
       return select_winner(combo_iterator->at(0));
     }

@@ -10,7 +10,7 @@ class GameState
 {
 private:
   Board *board;
-  bool three_in_a_row(std::vector<int> combo);
+  bool winning_combo(std::vector<int> combo);
   std::string select_winner(int cell);
 
 public:
